@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.FitnessGoal
+@{
+    ViewBag.Title = "FitnessGoal";
+}
+
+<h2>Fitness Goal</h2>
+
+
+@using (Html.BeginForm("Index", "FitnessGoal", FormMethod.Post))
+{
+    
+    <div>
+        <fieldset>
+            <legend>Plan Your Fitness</legend>
+            <div class="editor-label">
+                @Html.LabelFor(d => d.Days)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(d => d.Days)
+
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(d => d.Walk)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(d => d.Walk)
+            </div>
+               
+            <div class="editor-label">
+                @Html.LabelFor(d => d.Run)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(d => d.Run)
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(d => d.Exercise)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(d => d.Exercise)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(d => d.Calories)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(d => d.Calories)
+            </div>
+            <br />
+           
+            <input type="button" value="Submit" onclick="location.href='@Url.Action("FitnessGoal","FitnessGoal" )'" />
+            
+        </fieldset>
+    </div>
+}
+
+
+
