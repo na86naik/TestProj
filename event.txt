@@ -1,0 +1,18 @@
+@model IEnumerable<FitnessAchieve.Models.Events>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        WebGrid grid = new WebGrid(Model);
+    }
+
+    <h2>Index</h2>
+<h4>Events</h4>
+<hr />
+@grid.GetHtml(columns: new[]
+        {
+        grid.Column("EventID", style: "colIDLog", format:@<div>@item.EventDescription</div>),
+        grid.Column("Date", format: (item) => string.Format("{0:dd-MMM-yyyy}", item.Date)),
+        grid.Column("EventDescription", style: "colDescLog", format:@<div>@item.EventDescription</div>),
+        grid.Column("EventLocation", style: "colCommonLog", format:@<div>@item.EventDescription</div>)
+        })
